@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text">
+    Приложение теперь отображается на русском языке. Все меню, сообщения и содержимое локализованы на русский.
+</string>
+    <string name="numbers">1 2 3 4 5</string>
+    <string name="switch_to_en">Переключить на английский</string>
+    <string name="switch_to_ar">Переключить на арабский</string>
+    <string name="switch_to_ur">Переключить на урду</string>
+    <string name="switch_to_ru">Переключить на русский</string>
+    <string name="switch_to_fr">Переключить на французский</string>
+    <string name="switch_to_es">Переключить на испанский</string>
+    <string name="switch_to_de">Переключить на немецкий</string>
+    <string name="switch_to_it">Переключить на итальянский</string>
+    <string name="switch_to_zh">Переключить на китайский</string>
+    <string name="switch_to_ja">Переключить на японский</string>
+</resources>

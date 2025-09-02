@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text">
+    La aplicación ahora se muestra en español. Todos los menús, mensajes y contenido se han localizado al español.
+</string>
+    <string name="numbers">1 2 3 4 5</string>
+    <string name="switch_to_en">Cambiar a inglés</string>
+    <string name="switch_to_ar">Cambiar a árabe</string>
+    <string name="switch_to_ur">Cambiar a urdu</string>
+    <string name="switch_to_ru">Cambiar a ruso</string>
+    <string name="switch_to_fr">Cambiar a francés</string>
+    <string name="switch_to_es">Cambiar a español</string>
+    <string name="switch_to_de">Cambiar a alemán</string>
+    <string name="switch_to_it">Cambiar a italiano</string>
+    <string name="switch_to_zh">Cambiar a chino</string>
+    <string name="switch_to_ja">Cambiar a japonés</string>
+</resources>

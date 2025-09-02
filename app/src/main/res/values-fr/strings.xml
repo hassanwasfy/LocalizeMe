@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text">
+    L\'application est maintenant affichée en français. Tous les menus, messages et contenus ont été localisés en français.
+</string>
+    <string name="numbers">1 2 3 4 5</string>
+    <string name="switch_to_en">Passer à l\'anglais</string>
+    <string name="switch_to_ar">Passer à l\'arabe</string>
+    <string name="switch_to_ur">Passer à l\'ourdou</string>
+    <string name="switch_to_ru">Passer au russe</string>
+    <string name="switch_to_fr">Passer au français</string>
+    <string name="switch_to_es">Passer à l\'espagnol</string>
+    <string name="switch_to_de">Passer à l\'allemand</string>
+    <string name="switch_to_it">Passer à l\'italien</string>
+    <string name="switch_to_zh">Passer au chinois</string>
+    <string name="switch_to_ja">Passer au japonais</string>
+</resources>

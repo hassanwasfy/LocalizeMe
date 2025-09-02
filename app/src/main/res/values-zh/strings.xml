@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text">
+    应用程序现在以中文显示。所有菜单、消息和内容都已本地化为中文。
+</string>
+    <string name="numbers">一 二 三 四 五</string>
+    <string name="switch_to_en">切换到英语</string>
+    <string name="switch_to_ar">切换到阿拉伯语</string>
+    <string name="switch_to_ur">切换到乌尔都语</string>
+    <string name="switch_to_ru">切换到俄语</string>
+    <string name="switch_to_fr">切换到法语</string>
+    <string name="switch_to_es">切换到西班牙语</string>
+    <string name="switch_to_de">切换到德语</string>
+    <string name="switch_to_it">切换到意大利语</string>
+    <string name="switch_to_zh">切换到中文</string>
+    <string name="switch_to_ja">切换到日语</string>
+</resources>

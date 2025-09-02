@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text">
+    アプリケーションは現在日本語で表示されています。すべてのメニュー、メッセージ、コンテンツが日本語にローカライズされました。
+</string>
+    <string name="numbers">一 二 三 四 五</string>
+    <string name="switch_to_en">英語に切り替える</string>
+    <string name="switch_to_ar">アラビア語に切り替える</string>
+    <string name="switch_to_ur">ウルドゥー語に切り替える</string>
+    <string name="switch_to_ru">ロシア語に切り替える</string>
+    <string name="switch_to_fr">フランス語に切り替える</string>
+    <string name="switch_to_es">スペイン語に切り替える</string>
+    <string name="switch_to_de">ドイツ語に切り替える</string>
+    <string name="switch_to_it">イタリア語に切り替える</string>
+    <string name="switch_to_zh">中国語に切り替える</string>
+    <string name="switch_to_ja">日本語に切り替える</string>
+</resources>
