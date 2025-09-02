@@ -53,7 +53,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation("com.github.HassanWasfy:LocalizeMe:latest.release")
+    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.6")
 }
 ```
 
