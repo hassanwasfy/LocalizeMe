@@ -28,7 +28,7 @@ It allows you to easily **switch languages at runtime**, supports multiple local
 
 ## Demo
 
-![Demo](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/videos/showcase.gif)
+![Demo](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/master/videos/showcase.gif)
 
 The demo shows how the app switches languages.
 
@@ -36,7 +36,8 @@ The demo shows how the app switches languages.
 
 | Language Switcher | Arabic Example | Japanese Example |
 |------------------|----------------|------------------|
-| ![Arabic](https://github.com/hassanwasfy/LocalizeMe/tree/master/videos/arabic.png) | ![English](https://github.com/hassanwasfy/LocalizeMe/tree/master/videos/english.png) | ![Russian](https://https://github.com/hassanwasfy/LocalizeMe/tree/master/videos/russian.png) |
+| ![Switcher](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/master/videos/switcher.png) | ![Arabic](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/master/videos/arabic.png) | ![Japanese](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/master/videos/japanese.png) |
+
 
 
 videos
