@@ -1,6 +1,6 @@
 # LocalizeMe
 
-[![JitPack](https://img.shields.io/badge/jitpack-v1.0.0-blue)](https://jitpack.io/#HassanWasfy/LocalizeMe)
+[![JitPack](https://jitpack.io/v/HassanWasfy/LocalizeMe.svg)](https://jitpack.io/#HassanWasfy/LocalizeMe)
 
 **LocalizeMe** is a lightweight Android library for managing **app localization**.  
 It allows you to easily **switch languages at runtime**, supports multiple locales, and works with XML-based and compose resources.  
@@ -53,7 +53,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation ("com.github.HassanWasfy:LocalizeMe:1.0.0")
+    implementation("com.github.HassanWasfy:LocalizeMe:latest.release")
 }
 ```
 
