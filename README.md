@@ -1,6 +1,6 @@
 # LocalizeMe
 
-[![JitPack](https://jitpack.io/v/HassanWasfy/LocalizeMe.svg)](https://jitpack.io/#HassanWasfy/LocalizeMe)
+[![](https://jitpack.io/v/hassanwasfy/LocalizeMe.svg)](https://jitpack.io/#hassanwasfy/LocalizeMe)
 
 **LocalizeMe** is a lightweight Android library for managing **app localization**.  
 It allows you to easily **switch languages at runtime**, supports multiple locales, and works with XML-based and compose resources.  
