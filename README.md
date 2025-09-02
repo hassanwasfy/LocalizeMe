@@ -44,6 +44,7 @@ The demo shows how the app switches languages.
 
 ```gradle
 repositories {
+    mavenCentral()
     maven { url 'https://jitpack.io' }
 }
 ```
