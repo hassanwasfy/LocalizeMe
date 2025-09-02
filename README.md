@@ -36,10 +36,10 @@ The demo shows how the app switches languages.
 
 | Language Switcher | Arabic Example | Japanese Example |
 |------------------|----------------|------------------|
-| ![Arabic](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/videos/arabic.png) | ![English](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/videos/english.png) | ![Russian](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/videos/russian.png) |
+| ![Arabic](https://github.com/hassanwasfy/LocalizeMe/tree/master/videos/arabic.png) | ![English](https://github.com/hassanwasfy/LocalizeMe/tree/master/videos/english.png) | ![Russian](https://https://github.com/hassanwasfy/LocalizeMe/tree/master/videos/russian.png) |
 
 
-
+videos
 ## Installation
 
 ### Step 1: Add JitPack repository
