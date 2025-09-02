@@ -26,6 +26,20 @@ It allows you to easily **switch languages at runtime**, supports multiple local
 | Japanese        | ja-JP  |
 
 
+## Demo
+
+![Demo](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/videos/showcase.gif)
+
+The demo shows how the app switches languages.
+
+## Screenshots
+
+| Language Switcher | Arabic Example | Japanese Example |
+|------------------|----------------|------------------|
+| ![Arabic](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/videos/arabic.png) | ![English](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/videos/english.png) | ![Russian](https://raw.githubusercontent.com/hassanwasfy/LocalizeMe/videos/russian.png) |
+
+
+
 ## Installation
 
 ### Step 1: Add JitPack repository
