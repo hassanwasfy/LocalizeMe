@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main  # runs whenever you push to main
-
+      
+permissions:
+  contents: write
+  
 jobs:
   release:
     runs-on: ubuntu-latest
