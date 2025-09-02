@@ -5,7 +5,6 @@ import java.util.Locale
 enum class SupportedLocales(val tag: String, val locale: Locale) {
     EN_US("en-US", Locale("en", "US")),
     AR_EG("ar-EG", Locale("ar", "EG")),
-    AR_SA("ar-SA", Locale("ar", "SA")),
     UR_PK("ur-PK", Locale("ur", "PK")),
     RU_RU("ru-RU", Locale("ru", "RU")),
     FR_FR("fr-FR", Locale("fr", "FR")),
