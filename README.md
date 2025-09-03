@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
             Scaffold(
                 modifier = Modifier.fillMaxSize()
             ) { _ ->
-                //Set app language
+                // Set app language
                 Button(onClick = {
                     lifecycleScope.launch {
                         LanguageManager.setLanguage(this@MainActivity, SupportedLocales.AR_EG)
@@ -103,11 +103,11 @@ class MainActivity : AppCompatActivity() {
                     Text("Select Language")
                 }
 
-                //Get app language
-                val language: String = LanguageManager.getCurrentLanguage(this)
+                // Get app language
+                val languageCode: String = currentAppLanguageCode()
 
-                //Get app locale
-                val locale: Locale = LanguageManager.getCurrentLocale(this).locale
+                // Get app locale
+                val locale: Locale = currentResolvedLocale()
             }
         }
     }
