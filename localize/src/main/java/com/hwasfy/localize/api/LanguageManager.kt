@@ -13,7 +13,7 @@ import java.util.Locale
 
 object LanguageManager {
 
-    suspend fun setLanguage(context: Context, appLocale: SupportedLocales) {
+    fun setLanguage(context: Context, appLocale: SupportedLocales) {
         val tag = appLocale.tag
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

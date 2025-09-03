@@ -71,7 +71,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.12")
+    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.13")
 }
 ```
 
@@ -105,7 +105,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            val scope = rememberCoroutineScope()
             val currentLocale = currentAppLocale()
 
             Scaffold(
@@ -125,34 +124,28 @@ class MainActivity : ComponentActivity() {
 
                     Button(
                         onClick = {
-                            scope.launch {
-                                LanguageManager.setLanguage(
-                                    this@MainActivity,
-                                    SupportedLocales.EN_US
-                                )
-                            }
+                            LanguageManager.setLanguage(
+                                this@MainActivity,
+                                SupportedLocales.EN_US
+                            )
                         }
                     ) { Text("Switch to English") }
 
                     Button(
                         onClick = {
-                            scope.launch {
-                                LanguageManager.setLanguage(
-                                    this@MainActivity,
-                                    SupportedLocales.AR_EG
-                                )
-                            }
+                            LanguageManager.setLanguage(
+                                this@MainActivity,
+                                SupportedLocales.AR_EG
+                            )
                         }
                     ) { Text("التبديل إلى العربية") }
 
                     Button(
                         onClick = {
-                            scope.launch {
-                                LanguageManager.setLanguage(
-                                    this@MainActivity,
-                                    SupportedLocales.FR_FR
-                                )
-                            }
+                            LanguageManager.setLanguage(
+                                this@MainActivity,
+                                SupportedLocales.FR_FR
+                            )
                         }
                     ) { Text("Passer en Français") }
                 }
