@@ -12,7 +12,17 @@ enum class SupportedLocales(val tag: String, val locale: Locale) {
     DE_DE("de-DE", Locale("de", "DE")),
     IT_IT("it-IT", Locale("it", "IT")),
     ZH_CN("zh-CN", Locale("zh", "CN")),
-    JA_JP("ja-JP", Locale("ja", "JP"));
+    JA_JP("ja-JP", Locale("ja", "JP")),
+    PT_BR("pt-BR", Locale("pt", "BR")), // Portuguese (Brazil)
+    HI_IN("hi-IN", Locale("hi", "IN")), // Hindi (India)
+    TR_TR("tr-TR", Locale("tr", "TR")), // Turkish
+    FA_IR("fa-IR", Locale("fa", "IR")), // Persian (Iran)
+    KO_KR("ko-KR", Locale("ko", "KR")), // Korean (South Korea)
+    BN_BD("bn-BD", Locale("bn", "BD")), // Bengali (Bangladesh)
+    ID_ID("id-ID", Locale("id", "ID")), // Indonesian
+    MS_MY("ms-MY", Locale("ms", "MY")), // Malay
+    TH_TH("th-TH", Locale("th", "TH")); // Thai
+
 
     companion object {
         fun fromTag(tag: String): SupportedLocales {
