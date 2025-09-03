@@ -6,6 +6,7 @@ import android.os.LocaleList
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import com.hwasfy.localize.util.SupportedLocales
+import java.util.Locale
 
 object LanguageManager {
 
@@ -24,22 +25,26 @@ object LanguageManager {
 
 
     fun getCurrentLanguage(context: Context): String {
+        val defaultLanguage = Locale.getDefault().language
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            val locales = context.getSystemService(android.app.LocaleManager::class.java).applicationLocales
-            if (!locales.isEmpty) locales[0].language else "en"
+            val locales =
+                context.getSystemService(android.app.LocaleManager::class.java).applicationLocales
+            if (!locales.isEmpty) locales[0].language else defaultLanguage
         } else {
             val locales = AppCompatDelegate.getApplicationLocales()
-            if (!locales.isEmpty) locales[0]?.language ?: "en" else "en"
+            if (!locales.isEmpty) locales[0]?.language ?: defaultLanguage else defaultLanguage
         }
     }
 
     fun getCurrentLocale(context: Context): SupportedLocales {
+        val defaultTag = Locale.getDefault().toLanguageTag()
         val localeTag = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            val locales = context.getSystemService(android.app.LocaleManager::class.java).applicationLocales
-            if (!locales.isEmpty) locales[0].toLanguageTag() else "en-US"
+            val locales =
+                context.getSystemService(android.app.LocaleManager::class.java).applicationLocales
+            if (!locales.isEmpty) locales[0].toLanguageTag() else defaultTag
         } else {
             val locales = AppCompatDelegate.getApplicationLocales()
-            if (!locales.isEmpty) locales[0]?.toLanguageTag() ?: "en-US" else "en-US"
+            if (!locales.isEmpty) locales[0]?.toLanguageTag() ?: defaultTag else defaultTag
         }
 
         return SupportedLocales.fromTag(localeTag)
