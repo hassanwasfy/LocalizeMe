@@ -63,7 +63,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.6")
+    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.8")
 }
 ```
 
@@ -116,11 +116,10 @@ class MainActivity : AppCompatActivity() {
 
 ### Contributions are always welcome! If you'd like to contribute, please follow these steps:
 
-- Fork the repository: Start by forking the LocalizeMe repository to your own GitHub account.
-- Create a new branch: Create a new branch for your feature or bug fix. Use a descriptive name like feature/add-new-locale or fix/crash-on-language-change.
+- Fork the repository: Start by forking the `LocalizeMe` repository to your own GitHub account.
+- Create a new branch: Create a new branch for your feature or bug fix. Use a descriptive name like `feature/add-new-locale` or `fix/crash-on-language-change`.
 - Make your changes: Implement your changes and ensure the code follows the existing style and conventions.
-- Write tests: If applicable, add unit or integration tests to cover your new code.
-- Create a pull request: Once your changes are ready, create a pull request (PR) from your forked repository to the main branch of the original LocalizeMe repository.
+- Create a pull request: Once your changes are ready, create a pull request (PR) from your forked repository to the main branch of the `original LocalizeMe repository`.
 - Provide a clear description: In your PR, provide a detailed description of the changes you've made and the problem you're solving.
 
 We appreciate your help in making this library even better!
