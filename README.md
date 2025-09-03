@@ -5,6 +5,16 @@
 **LocalizeMe** is a lightweight Android library for managing **app localization**.  
 It allows you to easily **switch languages at runtime**, supports multiple locales, and works with XML-based and compose resources.  
 
+## Contents
+- [Features](#Features)
+- [Supported Locales](#Supported-Locales)
+- [Demo](#Demo)
+- [Screenshots](#Screenshots)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Advantages](#Advantages)
+- [Contributions](#Contributions)
+
 ## Features
 
 - Switch app language at runtime using `LanguageManager`.
@@ -101,4 +111,17 @@ class MainActivity : AppCompatActivity() {
 - Works with **XML-Compose resources**.
 - Can be used in **any Android app**, just add dependency.
 - Lightweight and modular, ready for Jitpack.
+
+## Contributions
+
+### Contributions are always welcome! If you'd like to contribute, please follow these steps:
+
+- Fork the repository: Start by forking the LocalizeMe repository to your own GitHub account.
+- Create a new branch: Create a new branch for your feature or bug fix. Use a descriptive name like feature/add-new-locale or fix/crash-on-language-change.
+- Make your changes: Implement your changes and ensure the code follows the existing style and conventions.
+- Write tests: If applicable, add unit or integration tests to cover your new code.
+- Create a pull request: Once your changes are ready, create a pull request (PR) from your forked repository to the main branch of the original LocalizeMe repository.
+- Provide a clear description: In your PR, provide a detailed description of the changes you've made and the problem you're solving.
+
+We appreciate your help in making this library even better!
 
