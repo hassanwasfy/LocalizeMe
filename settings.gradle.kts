@@ -20,5 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "LocalizeMe"
-include(":app")
 include(":localize")
