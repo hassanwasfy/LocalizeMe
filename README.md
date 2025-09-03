@@ -71,7 +71,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.10")
+    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.12")
 }
 ```
 
@@ -82,34 +82,112 @@ dependencies {
 add in `res/values/string.xml (any qualifer you target and we support)`
 then use in code Like:
 
+### 1- Use from list of buttons
+
 ```kotlin
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.lifecycleScope
 import com.hwasfy.localize.api.LanguageManager
 import com.hwasfy.localize.util.SupportedLocales
+import kotlinx.coroutines.launch
+import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
+
+    @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContent {
+            val scope = rememberCoroutineScope()
+            val currentLocale = currentAppLocale()
+
             Scaffold(
-                modifier = Modifier.fillMaxSize()
-            ) { _ ->
-                // Set app language
-                Button(onClick = {
-                    lifecycleScope.launch {
-                        LanguageManager.setLanguage(this@MainActivity, SupportedLocales.AR_EG)
-                    }
-                }) {
-                    Text("Select Language")
+                modifier = Modifier.fillMaxSize(),
+                topBar = {
+                    TopAppBar(title = { Text("Language Demo") })
                 }
+            ) { padding ->
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(padding)
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Text("Current: ${currentLocale.name} (${currentLocale.locale.displayName})")
 
-                // Get app language
-                val languageCode: String = currentAppLanguageCode()
+                    Button(
+                        onClick = {
+                            scope.launch {
+                                LanguageManager.setLanguage(
+                                    this@MainActivity,
+                                    SupportedLocales.EN_US
+                                )
+                            }
+                        }
+                    ) { Text("Switch to English") }
 
-                // Get app locale
-                val locale: Locale = currentResolvedLocale()
+                    Button(
+                        onClick = {
+                            scope.launch {
+                                LanguageManager.setLanguage(
+                                    this@MainActivity,
+                                    SupportedLocales.AR_EG
+                                )
+                            }
+                        }
+                    ) { Text("التبديل إلى العربية") }
+
+                    Button(
+                        onClick = {
+                            scope.launch {
+                                LanguageManager.setLanguage(
+                                    this@MainActivity,
+                                    SupportedLocales.FR_FR
+                                )
+                            }
+                        }
+                    ) { Text("Passer en Français") }
+                }
             }
         }
+    }
+}
+```
+
+### 2- Use from ViewModel/Repository
+
+```kotlin
+class SettingsRepository(private val context: Context) {
+
+    fun getCurrentLanguageCode(): String {
+        return LanguageManager.getCurrentLanguage(context) // "en", "ar", ...
+    }
+
+    fun getCurrentLocale(): SupportedLocales {
+        return LanguageManager.getCurrentLocale(context) // e.g., SupportedLocales.AR_EG
+    }
+}
+```
+
+### 3- Use from Composable
+
+```kotlin
+@Composable
+fun LanguageInfo() {
+    val code = currentAppLanguageCode()
+    val locale = currentResolvedLocale()
+
+    Column {
+        Text("Language Code: $code")
+        Text("Locale: ${locale.displayName}")
     }
 }
 ```

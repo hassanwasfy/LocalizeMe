@@ -54,11 +54,11 @@ object LanguageManager {
     }
 }
 
-
 @Composable
 @ReadOnlyComposable
 fun currentAppLocale(): SupportedLocales {
-    return LanguageManager.getCurrentLocale(LocalContext.current)
+    val context = LocalContext.current
+    return LanguageManager.getCurrentLocale(context)
 }
 
 @Composable
