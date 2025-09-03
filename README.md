@@ -18,23 +18,31 @@ It allows you to easily **switch languages at runtime**, supports multiple local
 ## Features
 
 - Switch app language at runtime using `LanguageManager`.
-- Supports **10+ languages** out of the box:
+- Supports **19+ languages** out of the box:
   
 ## Supported Locales
 
-| Locale          | Tag    |
-|-----------------|--------|
-| English         | en-US  |
-| Arabic (Egypt)  | ar-EG  |
-| Urdu            | ur-PK  |
-| Russian         | ru-RU  |
-| French          | fr-FR  |
-| Spanish         | es-ES  |
-| German          | de-DE  |
-| Italian         | it-IT  |
-| Chinese         | zh-CN  |
-| Japanese        | ja-JP  |
-
+| Locale         | Tag   |
+|----------------|-------|
+| English        | en-US |
+| Arabic (Egypt) | ar-EG |
+| Urdu           | ur-PK |
+| Russian        | ru-RU |
+| French         | fr-FR |
+| Spanish        | es-ES |
+| German         | de-DE |
+| Italian        | it-IT |
+| Chinese        | zh-CN |
+| Japanese       | ja-JP |
+| Portuguese     | pt-BR |
+| Hindi          | hi-IN |
+| Turkish        | tr-TR |
+| Persian        | fa-IR |
+| Korean         | ko-KR |
+| Bengali        | bn-BD |
+| Indonesian     | id-ID |
+| Malay          | ms-MY |
+| Thai           | th-TH |
 
 ## Demo
 
@@ -63,13 +71,16 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.9")
+    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.10")
 }
 ```
 
 ---
 
 ## Usage
+
+add in `res/values/string.xml (any qualifer you target and we support)`
+then use in code Like:
 
 ```kotlin
 import com.hwasfy.localize.api.LanguageManager
