@@ -3,7 +3,8 @@
 [![](https://jitpack.io/v/hassanwasfy/LocalizeMe.svg)](https://jitpack.io/#hassanwasfy/LocalizeMe)
 
 **LocalizeMe** is a lightweight Android library for managing **app localization**.  
-It allows you to easily **switch languages at runtime**, supports multiple locales, and works with XML-based and compose resources.  
+It allows you to easily **switch languages at runtime**, supports multiple locales, and works with
+XML-based and compose resources.
 
 ## Contents
 - [Features](#Features)
@@ -12,38 +13,37 @@ It allows you to easily **switch languages at runtime**, supports multiple local
 - [Screenshots](#Screenshots)
 - [Installation](#Installation)
 - [Usage](#Usage)
+- [Currency](#Currency)
+- [Normalization](#Normalization)
 - [Advantages](#Advantages)
 - [Contributions](#Contributions)
 
 ## Features
 
 - Switch app language at runtime using `LanguageManager`.
-- Supports **19+ languages** out of the box:
-  
+- Supports **33+ Locales** out of the box:
+
 ## Supported Locales
 
-| Locale         | Tag   |
-|----------------|-------|
-| English        | en-US |
-| English(Egypt) | en-EG |
-| Arabic (Egypt) | ar-EG |
-| Urdu           | ur-PK |
-| Russian        | ru-RU |
-| French         | fr-FR |
-| Spanish        | es-ES |
-| German         | de-DE |
-| Italian        | it-IT |
-| Chinese        | zh-CN |
-| Japanese       | ja-JP |
-| Portuguese     | pt-BR |
-| Hindi          | hi-IN |
-| Turkish        | tr-TR |
-| Persian        | fa-IR |
-| Korean         | ko-KR |
-| Bengali        | bn-BD |
-| Indonesian     | id-ID |
-| Malay          | ms-MY |
-| Thai           | th-TH |
+| Locale                   | Tag   | Locale                 | Tag   |
+|--------------------------|-------|------------------------|-------|
+| Arabic (Egypt)           | ar-EG | Urdu (Pakistan)        | ur-PK | 
+| Arabic (Saudi Arabia)    | ar-SA | French (France)        | fr-FR |
+| Arabic (Jordan)          | ar-JO | Spanish (Spain)        | es-ES |
+| Arabic (Iraq)            | ar-IQ | Italian (Italy)        | it-IT |
+| Arabic (Morocco)         | ar-MA | Japanese (Japan)       | ja-JP |
+| Arabic (Libya)           | ar-LY | Hindi (India)          | hi-IN |
+| Arabic (UAE)             | ar-AE | Persian (Iran)         | fa-IR |
+| English (United States)  | en-US | Bengali (Bangladesh)   | bn-BD |
+| English (Egypt)          | en-EG | Malay (Malaysia)       | ms-MY |
+| English (United Kingdom) | en-UK | German (Germany)       | de-DE |
+| English (Iraq)           | en-IQ | Chinese (China)        | zh-CN | 
+| English (Morocco)        | en-MA | Portuguese (Brazil)    | pt-BR | 
+| English (Saudi Arabia)   | en-SA | Turkish (Türkiye)      | tr-TR |
+| English (Libya)          | en-LY | Korean (South Korea)   | ko-KR |
+| English (Jordan)         | en-JO | Indonesian (Indonesia) | id-ID | 
+| English (UAE)            | en-AE | Thai (Thailand)        | th-TH | 
+| Russian (Russia)         | ru-RU |
 
 ## Demo
 
@@ -72,7 +72,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.14")
+    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.15")
 }
 ```
 
@@ -187,6 +187,77 @@ fun LanguageInfo() {
 ```
 
 ---
+
+## Currency
+
+### Currency Formatting & Digit Utilities
+
+Extension helpers to turn `Long`, `Double`, or `Float` values into a fully-localized currency string
+based on the app’s current locale.
+
+```kotlin
+fun Long.toMoneyString(context: Context, fractionDigits: Int = 2): String =
+    this.formatAsCurrency(context, fractionDigits)
+
+fun Double.toMoneyString(context: Context, fractionDigits: Int = 2): String =
+    this.formatAsCurrency(context, fractionDigits)
+
+fun Float.toMoneyString(context: Context, fractionDigits: Int = 2): String =
+    this.toDouble().formatAsCurrency(context, fractionDigits)
+```
+
+#### example
+
+```kotlin
+val amount: Long = 500
+textView.text = amount.toMoneyString(context, fractionDigits = 2)   //XML "EGP 500,00" or "$500.00"
+Text(
+    amount.toMoneyString(
+        LocalContext.current,
+        fractionDigits = 2
+    )
+) //Compose text with money formatted
+```
+
+## Normalization
+
+Helpers for converting Arabic-Indic or Eastern-Arabic digits to western ASCII digits.
+
+```kotlin
+fun String.toWesternDigits(): String {
+    val arabicIndicDigits = listOf('٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩')
+    val easternArabicDigits = listOf('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹')
+
+    return this.map { char ->
+        when (char) {
+            in arabicIndicDigits -> arabicIndicDigits.indexOf(char).toString()[0]
+            in easternArabicDigits -> easternArabicDigits.indexOf(char).toString()[0]
+            else -> char
+        }
+    }.joinToString("")
+}
+
+fun String.normalizeDigits(): String {
+    val builder = StringBuilder()
+    for (ch in this) {
+        if (ch.isDigit()) {
+            val digit = Character.getNumericValue(ch) // works for Arabic, Hindi, etc.
+            builder.append(digit)
+        } else {
+            builder.append(ch)
+        }
+    }
+    return builder.toString()
+}
+```
+
+#### example
+
+```kotlin
+val mixed = "سعر ١٢٣٤"
+val western = mixed.toWesternDigits()     // "سعر 1234"
+val normalized = mixed.normalizeDigits()  // "سعر 1234"
+```
 
 ## Advantages
 
