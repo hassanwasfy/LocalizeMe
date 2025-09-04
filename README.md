@@ -25,6 +25,7 @@ It allows you to easily **switch languages at runtime**, supports multiple local
 | Locale         | Tag   |
 |----------------|-------|
 | English        | en-US |
+| English(Egypt) | en-EG |
 | Arabic (Egypt) | ar-EG |
 | Urdu           | ur-PK |
 | Russian        | ru-RU |
@@ -71,7 +72,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.13")
+    implementation("com.github.hassanwasfy:LocalizeMe:v1.0.14")
 }
 ```
 

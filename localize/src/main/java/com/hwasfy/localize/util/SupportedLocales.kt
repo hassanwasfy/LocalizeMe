@@ -4,6 +4,8 @@ import java.util.Locale
 
 enum class SupportedLocales(val tag: String, val locale: Locale) {
     EN_US("en-US", Locale("en", "US")),
+    EN_UK("en-UK", Locale("en", "UK")),
+    EN_EG("en-EG", Locale("en", "EG")),
     AR_EG("ar-EG", Locale("ar", "EG")),
     UR_PK("ur-PK", Locale("ur", "PK")),
     RU_RU("ru-RU", Locale("ru", "RU")),
@@ -21,8 +23,22 @@ enum class SupportedLocales(val tag: String, val locale: Locale) {
     BN_BD("bn-BD", Locale("bn", "BD")), // Bengali (Bangladesh)
     ID_ID("id-ID", Locale("id", "ID")), // Indonesian
     MS_MY("ms-MY", Locale("ms", "MY")), // Malay
-    TH_TH("th-TH", Locale("th", "TH")); // Thai
+    TH_TH("th-TH", Locale("th", "TH")), // Thai
 
+    EN_SA("en-SA", Locale("en", "SA")),      // Saudi Arabia
+    EN_IQ("en-IQ", Locale("en", "IQ")),      // Iraq
+    EN_JO("en-JO", Locale("en", "JO")),      // Jordan
+    EN_MA("en-MA", Locale("en", "MA")),      // Morocco
+    EN_AE("en-AE", Locale("en", "AE")),      // United Arab Emirates
+    EN_LY("en-LY", Locale("en", "LY")),      // Libya
+
+    // New Arabic locales
+    AR_SA("ar-SA", Locale("ar", "SA")),      // Saudi Arabia
+    AR_IQ("ar-IQ", Locale("ar", "IQ")),      // Iraq
+    AR_JO("ar-JO", Locale("ar", "JO")),      // Jordan
+    AR_MA("ar-MA", Locale("ar", "MA")),      // Morocco
+    AR_AE("ar-AE", Locale("ar", "AE")),      // United Arab Emirates
+    AR_LY("ar-LY", Locale("ar", "LY"));      // Libya
 
     companion object {
         fun fromTag(tag: String): SupportedLocales {
