@@ -83,6 +83,14 @@ dependencies {
 add in `res/values/string.xml (any qualifer you target and we support)`
 then use in code Like:
 
+### First apply in needed modules
+
+```gradle
+dependencies {
+    implementation(project(":localize"))
+}
+```
+
 ### 1- Use from list of buttons
 
 ```kotlin
