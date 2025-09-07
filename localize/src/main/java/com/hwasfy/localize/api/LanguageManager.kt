@@ -14,17 +14,29 @@ import java.util.Locale
 object LanguageManager {
 
     fun setLanguage(context: Context, appLocale: SupportedLocales) {
-        val tag = appLocale.tag
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            context.getSystemService(android.app.LocaleManager::class.java)
-                .applicationLocales = LocaleList.forLanguageTags(tag)
-        } else {
-            AppCompatDelegate.setApplicationLocales(
-                LocaleListCompat.forLanguageTags(tag)
-            )
-        }
+    val tag = appLocale.tag
+    val locale = Locale.forLanguageTag(tag)
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        context.getSystemService(android.app.LocaleManager::class.java)
+            .applicationLocales = LocaleList.forLanguageTags(tag)
+    } else {
+        AppCompatDelegate.setApplicationLocales(
+            LocaleListCompat.forLanguageTags(tag)
+        )
+        Locale.setDefault(locale)
+        @Suppress("DEPRECATION")
+        context.resources.updateConfiguration(
+            context.resources.configuration.apply {
+                setLocale(locale)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    setLocales(android.os.LocaleList(locale))
+                }
+            },
+            context.resources.displayMetrics
+        )
     }
+}
+ 
 
 
     fun getCurrentLanguage(context: Context): String {
