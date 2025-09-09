@@ -81,9 +81,8 @@ dependencies {
 ## Usage
 
 add in `res/values/string.xml (any qualifer you target and we support)`
-then use in code Like:
 
-### First apply in needed modules
+### 1- apply in needed modules
 
 ```gradle
 dependencies {
@@ -91,24 +90,58 @@ dependencies {
 }
 ```
 
+### And for `Android 12 or less` 13+ and above doesn't need steps 2,3.
+
+--- 
+
+#### 2- Extend `Application` class
+
+##### then override the `attachBaseContext`
+
+```kotlin
+class MainApp : Application() {
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(LocaleHelper.wrapContext(base))
+    }
+}
+```
+
+#### 3- Add class to the manifest
+
+```xml
+
+<application android:name=".MainApp"></application>
+```
+
+---
+
+### Examples
+
 ### 1- Use from list of buttons
 
 ```kotlin
+import android.annotation.SuppressLint
+import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.lifecycleScope
 import com.hwasfy.localize.api.LanguageManager
+import com.hwasfy.localize.api.currentAppLocale
 import com.hwasfy.localize.util.SupportedLocales
-import kotlinx.coroutines.launch
-import java.util.*
 
 class MainActivity : ComponentActivity() {
 
+    @OptIn(ExperimentalMaterial3Api::class)
     @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
