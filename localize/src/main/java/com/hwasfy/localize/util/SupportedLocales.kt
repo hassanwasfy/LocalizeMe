@@ -6,6 +6,7 @@ enum class SupportedLocales(val tag: String, val locale: Locale) {
 
     EN_US("en-US", Locale.forLanguageTag("en-US")),
     EN_UK("en-UK", Locale.forLanguageTag("en-UK")),
+    EN_GB("en-GB", Locale.forLanguageTag("en-GB")),
     EN_EG("en-EG", Locale.forLanguageTag("en-EG")),
     AR_EG("ar-EG", Locale.forLanguageTag("ar-EG")),
     UR_PK("ur-PK", Locale.forLanguageTag("ur-PK")),
